@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+
+{% block content %}
+    <h3>Главная страница</h3>
+    {% for el in tasks %}
+        <div class = "alert alert-warning mt-2">
+            <h2>{{ el.title }}</h2>
+            <p>{{ el.task }}</p><p>{{ el.date }}</p><p>{{ el.done }}</p>
+            <div style="position: absolute; right: 20px; bottom: 20px">Важность<p>{{ el.get_importance_type_display }}</p></div>
+        </div>
+    {% endfor %}
+{% endblock %}
